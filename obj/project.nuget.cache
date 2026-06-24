@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tUblcfFDcQE=",
+  "success": true,
+  "projectFilePath": "H:\\astha it\\stackoverflow-lite\\stackoverflow-lite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SUNNY\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "C:\\Users\\SUNNY\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
