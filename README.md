@@ -79,6 +79,4 @@ Migrations also run automatically on application startup.
 | Votes | Upvote/downvote questions and answers |
 | Tags | Create, list |
 
-## Commit guide
 
-See [COMMITS.md](./COMMITS.md) for the step-by-step commit plan.
