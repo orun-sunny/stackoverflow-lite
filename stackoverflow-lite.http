@@ -1,6 +1,0 @@
-@stackoverflow_lite_HostAddress = http://localhost:5043
-
-GET {{stackoverflow_lite_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
