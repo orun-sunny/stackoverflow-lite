@@ -38,6 +38,7 @@ public static class DependencyInjection
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IHealthProbeService, HealthProbeService>();
+        services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
         services.AddHostedService<DatabaseMigrationHostedService>();
 
