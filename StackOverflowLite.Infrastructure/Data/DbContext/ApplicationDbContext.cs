@@ -12,6 +12,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<UserProfile> UserProfiles => Set<UserProfile>();
     public DbSet<Question> Questions => Set<Question>();
     public DbSet<Tag> Tags => Set<Tag>();
+    public DbSet<Answer> Answers => Set<Answer>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -36,6 +37,15 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             entity.Property(q => q.Description).IsRequired();
             entity.HasMany(q => q.Tags)
                   .WithMany(t => t.Questions);
+        });
+
+        builder.Entity<Answer>(entity =>
+        {
+            entity.Property(a => a.Content).IsRequired();
+            entity.HasOne(a => a.Question)
+                  .WithMany(q => q.Answers)
+                  .HasForeignKey(a => a.QuestionId)
+                  .OnDelete(DeleteBehavior.Cascade);
         });
     }
 }

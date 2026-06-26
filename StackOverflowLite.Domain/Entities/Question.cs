@@ -11,4 +11,5 @@ public class Question
 
     // Navigation properties
     public ICollection<Tag> Tags { get; set; } = new List<Tag>();
+    public ICollection<Answer> Answers { get; set; } = new List<Answer>();
 }
