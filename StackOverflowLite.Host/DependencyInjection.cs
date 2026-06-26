@@ -29,6 +29,7 @@ public static class DependencyInjection
             };
         });
 
+        services.AddHttpContextAccessor();
         services.AddControllers();
         services.AddSwaggerGen(options =>
         {
