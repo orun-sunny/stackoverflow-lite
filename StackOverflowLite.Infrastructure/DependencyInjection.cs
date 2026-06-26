@@ -26,15 +26,17 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        var redisConnection = configuration.GetConnectionString("Redis")
-            ?? configuration["Redis:ConnectionString"]
-            ?? "localhost:6379";
+        // var redisConnection = configuration.GetConnectionString("Redis")
+        //     ?? configuration["Redis:ConnectionString"]
+        //     ?? "localhost:6379";
 
-        services.AddStackExchangeRedisCache(options =>
-        {
-            options.Configuration = redisConnection;
-            options.InstanceName = "StackOverflowLite:";
-        });
+        // services.AddStackExchangeRedisCache(options =>
+        // {
+        //     options.Configuration = redisConnection;
+        
+        //     options.InstanceName = "StackOverflowLite:";
+        // });
+        services.AddDistributedMemoryCache();
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IHealthProbeService, HealthProbeService>();
