@@ -13,6 +13,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Question> Questions => Set<Question>();
     public DbSet<Tag> Tags => Set<Tag>();
     public DbSet<Answer> Answers => Set<Answer>();
+    public DbSet<Vote> Votes => Set<Vote>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -46,6 +47,12 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
                   .WithMany(q => q.Answers)
                   .HasForeignKey(a => a.QuestionId)
                   .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        builder.Entity<Vote>(entity =>
+        {
+            entity.HasIndex(v => new { v.UserId, v.QuestionId }).IsUnique();
+            entity.HasIndex(v => new { v.UserId, v.AnswerId }).IsUnique();
         });
     }
 }
