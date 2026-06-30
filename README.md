@@ -10,7 +10,6 @@
 - **Architecture**: Clean Architecture (Domain, Application, Infrastructure, Presentation/Host)
 - **Patterns**: CQRS (Command Query Responsibility Segregation) via **MediatR**
 - **Validation**: Input model validation via **FluentValidation**
-- **Error Handling**: Functional error flow management using the **ErrorOr** library (avoiding heavy exception-throwing flows)
 - **Database**: PostgreSQL mapped with **Entity Framework Core 10**
 - **Identity & Auth**: **ASP.NET Core Identity** for user storage & security + **JWT Bearer Authentication**
 - **Caching**: **Distributed Caching** foundation (configured to fallback to Memory Cache; extensible to Redis)
