@@ -26,14 +26,14 @@ public static class DependencyInjection
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        // var redisConnection = configuration.GetConnectionString("Redis")
+        // var redisConnection = configuration.GetConnectionString("Redis") //commneted out for now, as here not using Redis in this implementation
         //     ?? configuration["Redis:ConnectionString"]
         //     ?? "localhost:6379";
 
         // services.AddStackExchangeRedisCache(options =>
         // {
         //     options.Configuration = redisConnection;
-        
+
         //     options.InstanceName = "StackOverflowLite:";
         // });
         services.AddDistributedMemoryCache();
